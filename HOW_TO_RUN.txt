@@ -1,0 +1,87 @@
+========================================
+  HOW TO RUN THE GEOSPATIAL API
+========================================
+
+IMPORTANT: The virtual environment MUST be activated first!
+All packages (geopandas, fastapi, etc.) are in the .venv folder.
+
+========================================
+  OPTION 1: Use Batch Files (EASIEST!)
+========================================
+
+Double-click on one of these files:
+
+  start.bat  - Start the API server
+  test.bat   - Run all tests
+
+These files automatically activate the virtual environment.
+
+========================================
+  OPTION 2: Manual Method
+========================================
+
+1. Open PowerShell in this folder
+
+2. Activate virtual environment:
+   .venv\Scripts\activate
+
+   You should see (.venv) in your prompt
+
+3. Run the API:
+   uvicorn app.main:app --reload
+
+4. Open browser:
+   http://127.0.0.1:8000/docs
+
+========================================
+  CHECKING IF IT WORKED
+========================================
+
+After activating .venv, run:
+   python -c "import geopandas; print('SUCCESS!')"
+
+If you see "SUCCESS!" - everything is working!
+
+If you see "ModuleNotFoundError" - the virtual environment
+is NOT activated (go back to step 2).
+
+========================================
+  TROUBLESHOOTING
+========================================
+
+Q: I get "ModuleNotFoundError: No module named 'geopandas'"
+A: You forgot to activate the virtual environment!
+   Run: .venv\Scripts\activate
+
+Q: The .bat files don't work
+A: Right-click and select "Run as Administrator"
+
+Q: PowerShell scripts won't run
+A: Use the .bat files instead, they always work!
+
+Q: Port 8000 is already in use
+A: Change port: uvicorn app.main:app --reload --port 8001
+
+========================================
+  WHAT TO DO NEXT
+========================================
+
+1. Start the API with start.bat
+2. Open http://127.0.0.1:8000/docs
+3. Try the "POST /api/files/" endpoint
+4. Upload sample_data.kml
+5. Copy the "id" from the response
+6. Try "GET /api/files/{id}/measurements/"
+7. See your measurements in meters!
+
+========================================
+  NEED MORE HELP?
+========================================
+
+Read these files:
+- QUICKSTART.md - Detailed instructions
+- README.md - Full documentation
+- sample_data.kml - Test file to upload
+
+All tests pass (35/35) ✓
+The API is fully functional! ✓

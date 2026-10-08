@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Sample Geospatial Data</name>
+    <description>Sample KML file for testing the Geospatial File Measurement API</description>
+    
+    <!-- Polygon Example: Approximately 1km x 1km area in Bangalore, India -->
+    <Placemark>
+      <name>Test Area - Bangalore</name>
+      <description>A test polygon covering approximately 1 square kilometer</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              77.595,12.995,0
+              77.605,12.995,0
+              77.605,13.005,0
+              77.595,13.005,0
+              77.595,12.995,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    
+    <!-- LineString Example: Approximately 1.5km line -->
+    <Placemark>
+      <name>Test Route</name>
+      <description>A test linestring approximately 1.5 kilometers long</description>
+      <LineString>
+        <coordinates>
+          77.600,13.000,0
+          77.610,13.005,0
+          77.615,13.010,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    
+    <!-- Point Example -->
+    <Placemark>
+      <name>Test Point</name>
+      <description>A test point location</description>
+      <Point>
+        <coordinates>77.600,13.000,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
